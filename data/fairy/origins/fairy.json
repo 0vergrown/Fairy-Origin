@@ -1,0 +1,18 @@
+{
+	"powers": [
+		"fairy:aetherial_wings",
+		"fairy:stormbound_fury",
+		"fairy:luminous_lullaby",
+		"fairy:verdant_touch",
+		"fairy:chromatic_aura",
+		"fairy:delicate_stature",
+		"fairy:irons_bane",
+		"fairy:natures_diet",
+		"fairy:lunar_veil"
+	],
+	"icon": "minecraft:glowstone_dust",
+	"order": 10,
+	"impact": 3,
+	"name": "Fairy",
+	"description": "A fairy (or fae) are ethereal beings born from nature's very essence. They are guardians of the delicate balance between the natural world and the realm of mortals. With wings as delicate as the petals of spring flowers, they glide gracefully through the air. Their bond with nature grants them unique abilities, allowing them to commune with animals, harness the power of plants, and wield the wrath of the elements. However, this deep connection comes at a cost. The Fae are vulnerable to the harshness of the modern world, especially the cold touch of iron and the burning rays of the sun. As a Fae, you must navigate the challenges of a world that is both wondrous and perilous, using your gifts to protect the natural order and ensure that the ancient magic of the Fae endures for generations to come."
+}

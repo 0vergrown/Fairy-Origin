@@ -1,0 +1,20 @@
+{
+    "name": "Nature's Diet",
+    "description": "Bound by their ethereal essence, a Fae's palate is attuned solely to the pure nourishment of nature. While the world offers a plethora of foods, they find sustenance only in the sweet bounty of fruits and berries. Any attempt to consume other foods proves futile, as their delicate constitution rejects anything that doesn't resonate with the natural world.",
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:food"
+            },
+            {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "fairy:edible"
+                },
+                "inverted": true
+            }
+        ]
+    }
+}

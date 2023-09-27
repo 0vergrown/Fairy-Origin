@@ -1,0 +1,158 @@
+{
+    "name":"Iron's Bane",
+    "description":"The Fairy, for all their ethereal grace and connection to nature, bear a vulnerability rooted in ancient feuds - Iron's Bane. This age-old weakness means that any contact with iron, be it a weapon's strike or the mere touch of its cold surface, not only inflicts greater harm but ignites the Fae in searing flames. To don the armor of this metal is to court danger, as the burning embrace persists until such iron is cast aside.",
+    "type":"origins:multiple",
+    "burn_if_touch_iron":{
+       "type":"origins:burn",
+       "interval":1,
+       "burn_duration":5,
+       "condition":{
+          "type":"origins:or",
+          "conditions":[
+             {
+                "type":"origins:equipped_item",
+                "equipment_slot":"mainhand",
+                "item_condition":{
+                   "type":"origins:ingredient",
+                   "ingredient":{
+                      "tag":"fairy:iron"
+                   }
+                }
+             },
+             {
+                "type":"origins:equipped_item",
+                "equipment_slot":"offhand",
+                "item_condition":{
+                   "type":"origins:ingredient",
+                   "ingredient":{
+                      "tag":"fairy:iron"
+                   }
+                }
+             },
+             {
+                "type":"origins:equipped_item",
+                "equipment_slot":"head",
+                "item_condition":{
+                   "type":"origins:ingredient",
+                   "ingredient":{
+                      "tag":"fairy:iron"
+                   }
+                }
+             },
+             {
+                "type":"origins:equipped_item",
+                "equipment_slot":"chest",
+                "item_condition":{
+                   "type":"origins:ingredient",
+                   "ingredient":{
+                      "tag":"fairy:iron"
+                   }
+                }
+             },
+             {
+                "type":"origins:equipped_item",
+                "equipment_slot":"legs",
+                "item_condition":{
+                   "type":"origins:ingredient",
+                   "ingredient":{
+                      "tag":"fairy:iron"
+                   }
+                }
+             },
+             {
+                "type":"origins:equipped_item",
+                "equipment_slot":"feet",
+                "item_condition":{
+                   "type":"origins:ingredient",
+                   "ingredient":{
+                      "tag":"fairy:iron"
+                   }
+                }
+             },
+             {
+                "type":"origins:in_block",
+                "block_condition":{
+                   "type":"origins:in_tag",
+                   "tag":"fairy:iron"
+                }
+             },
+             {
+                "type":"origins:on_block",
+                "block_condition":{
+                   "type":"origins:in_tag",
+                   "tag":"fairy:iron"
+                }
+             },
+             {
+                "type":"origins:block_collision",
+                "block_condition":{
+                   "type":"origins:in_tag",
+                   "tag":"fairy:iron"
+                },
+                "offset_x":0.01,
+                "offset_z":0.01,
+                "offset_y":0
+             },
+             {
+                "type":"origins:block_collision",
+                "block_condition":{
+                   "type":"origins:in_tag",
+                   "tag":"fairy:iron"
+                },
+                "offset_x":-0.01,
+                "offset_z":-0.01,
+                "offset_y":0
+             },
+             {
+                "type":"origins:riding",
+                "bientity_condition":{
+                   "type":"origins:target_condition",
+                   "condition":{
+                      "type":"origins:entity_type",
+                      "entity_type":"minecraft:minecart"
+                   }
+                }
+             },
+             {
+                "type": "origins:inventory",
+                "inventory_types":[
+                    "inventory"
+                ],
+                "process_mode":"items",
+                "item_condition":{
+                    "type":"origins:ingredient",
+                    "ingredient":{
+                       "tag":"fairy:iron"
+                    }
+                },
+                "comparison":">=",
+                "compare_to": 1
+             }
+          ]
+       }
+    },
+    "set_on_fire_if_attacker_uses_iron":{
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:set_on_fire",
+            "duration": 5
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "damage_condition": {
+            "type": "origins:attacker",
+            "entity_condition": {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag":"fairy:iron"
+                    }
+                }
+            }
+        }
+    }
+}

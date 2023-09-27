@@ -1,0 +1,30 @@
+{
+    "name": "Stormbound Fury",
+    "description": "Bound to the tempestuous moods of the skies, the Fae can harness the fury of tumultuous weather. As thunder roars and rain lashes the earth, they channel the storm's energy to summon a lightning bolt at a targeted location. [On Hit]",
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:spawn_entity",
+                "entity_type": "minecraft:lightning_bolt"
+            },
+            {    
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.trident.thunder",
+                "volume": 0.60,
+                "pitch": 1.70
+            }
+        ]
+    },
+    "cooldown": 100,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location":"origins:textures/gui/resource_bar.png",
+        "bar_index": 2
+    },
+    "condition": {
+        "type": "origins:predicate",
+        "predicate": "fairy:weather/is_thunderstorm"
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "name": "Luminous Lullaby",
+    "description": "With a delicate touch and a sprinkle of glowstone dust, the Fae invoke the Luminous Lullaby upon a chosen entity. The enchanted dust envelops the target, clouding their vision and ensnaring their movements.",
+    "type":"origins:action_on_entity_use",
+    "bientity_action":{
+       "type":"origins:target_action",
+       "action":{
+          "type":"origins:and",
+          "actions":[
+            {
+                "type": "origins:spawn_particles",
+                "particle": {
+                    "type": "minecraft:dust",
+                    "params": "0.88 0.96 0.28 1"
+                },
+                "count": 16,
+                "speed": 0.0,
+                "force": true,
+                "spread": {
+                    "x": 0.922,
+                    "y": 0.314,
+                    "z": 0.314
+                },
+                "offset_y": 0.5
+            },
+             {
+                "type":"origins:play_sound",
+                "sound":"minecraft:block.amethyst_block.chime",
+                "volume":1.00,
+                "pitch":0.90
+             },
+             {
+                "type":"origins:delay",
+                "ticks":70,
+                "action":{
+                   "type":"origins:and",
+                   "actions":[
+                      {
+                         "type":"origins:play_sound",
+                         "sound":"minecraft:entity.evoker.cast_spell",
+                         "volume":1.00,
+                         "pitch":0.50
+                      },
+                      {
+                         "type":"origins:apply_effect",
+                         "effects":[
+                            {
+                               "effect":"minecraft:blindness",
+                               "duration":100,
+                               "amplifier":1,
+                               "is_ambient":false,
+                               "show_particles":false,
+                               "show_icon":true
+                            },
+                            {
+                               "effect":"minecraft:slowness",
+                               "duration":100,
+                               "amplifier":1,
+                               "is_ambient":false,
+                               "show_particles":false,
+                               "show_icon":true
+                            }
+                         ]
+                      }
+                   ]
+                }
+             }
+          ]
+       }
+    },
+    "held_item_action":{
+       "type":"origins:consume",
+       "amount":1
+    },
+    "item_condition":{
+       "type":"origins:ingredient",
+       "ingredient":{
+          "item":"minecraft:glowstone_dust"
+       }
+    },
+    "hands":[
+       "main_hand"
+    ],
+    "action_result":"success",
+    "priority":0
+}

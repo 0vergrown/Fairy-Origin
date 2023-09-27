@@ -1,0 +1,90 @@
+{
+	"name":"Delicate Stature",
+	"description":"Born from the whispers of the wind and the gentle embrace of petals, the Fairy possess a diminutive size, half a block in height, is both a blessing and a curse. While their small frame grants them swiftness, allowing for quicker strikes, it comes at the cost of fragility. With a mere five hearts, they tread the world with caution, ever-aware of the dangers that loom large. Additionally, their reach in build and in combat is slightly limited, a trade-off for their nimble form.",
+	"badges":[
+	   {
+		  "type":"origins:tooltip",
+		  "sprite":"origins:textures/gui/badge/star.png",
+		  "text":"You are half a block tall, have five (5) hearts total, 0.5 more attack speed, 0.25 less attack range, and 1 less build range."
+	   }
+	],
+	"type":"origins:multiple",
+	"size_decrease":{
+	   "type":"origins:action_on_callback",
+	   "entity_action_chosen":{
+		  "type":"origins:and",
+		  "actions":[
+			 {
+				"type":"origins:execute_command",
+				"command":"scale set pehkui:height 0.25 @s"
+			 },
+			 {
+				"type":"origins:execute_command",
+				"command":"scale set pehkui:width 0.25 @s"
+			 },
+			 {
+				"type":"origins:execute_command",
+				"command":"scale persist set true @s"
+			 }
+		  ]
+	   },
+	   "entity_action_lost":{
+		  "type":"origins:execute_command",
+		  "command":"scale reset @s"
+	   },
+	   "entity_action_respawned":{
+		  "type":"origins:and",
+		  "actions":[
+			 {
+				"type":"origins:execute_command",
+				"command":"scale set pehkui:height 0.25 @s"
+			 },
+			 {
+				"type":"origins:execute_command",
+				"command":"scale set pehkui:width 0.25 @s"
+			 },
+			 {
+				"type":"origins:execute_command",
+				"command":"scale persist set true @s"
+			 }
+		  ]
+	   },
+	   "execute_chosen_when_orb":true
+	},
+	"attribute_modifiers":{
+	   "type":"origins:attribute",
+	   "modifiers":[
+		  {
+			 "attribute":"minecraft:generic.max_health",
+			 "operation":"addition",
+			 "value":-10,
+			 "name":"Max Health Reduced"
+		  },
+		  {
+			 "attribute":"minecraft:generic.attack_speed",
+			 "operation":"addition",
+			 "value":0.5,
+			 "name":"Attack Speed Increased"
+		  },
+		  {
+			 "attribute":"minecraft:generic.movement_speed",
+			 "operation":"addition",
+			 "value":-0.015,
+			 "name":"Movement Speed Reduced"
+		  },
+		  {
+			 "attribute":"reach-entity-attributes:attack_range",
+			 "operation":"addition",
+			 "value":-0.25,
+			 "name":"Attack Range Reduced"
+		  },
+		  {
+			 "attribute":"reach-entity-attributes:reach",
+			 "operation":"addition",
+			 "value":-1,
+			 "name":"Block Reach Reduced"
+		  }
+	   ],
+	   "update_health":true
+	}
+}
